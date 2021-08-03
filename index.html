@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 0px;
+      }
+
+      a {
+        margin: 0px;
+      }
+
+      /* modifique o grid-template-columns para alterar a quantidade de colunas na versão desktop (você também precisará alterar a quantidade de 'columns' lá em baixo)*/
+      #myMosaic {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto; 
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        position: fixed;
+        transition: all 0.5s ease;/* altere aqui para aumentar ou diminuir a velocidade da transição */
+      }
+
+      #myMosaic img {
+        transition: all 0.5s ease;/* altere aqui para aumentar ou diminuir a velocidade da transição */
+      }
+
+      #zoomOutBtn {
+        display: none;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+      }
+
+      #timestamp {
+        padding: 3px;
+        position: absolute;
+        top: 0;
+        text-align: center;
+        background: black;
+        color: green;
+        font-family: monospace;
+        font-weight: bold;
+        font-size: 16px;
+        display: none;
+      }
+
+      @media only screen and (max-width: 600px) {
+        #myMosaic {
+          /* modifique o grid-template-columns para alterar a quantidade de colunas na versão mobile (você também precisará alterar a quantidade de 'columns' lá em baixo)*/
+          grid-template-columns: auto auto auto auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myMosaic">
+      <!-- insira aqui as imagens, uma por uma, especificando 'id' e 'src' -->
+      <img id="a0" src="img/img (1).gif" />
+      <img id="a1" src="img/img (2).gif" />
+      <img id="a2" src="img/img (3).gif" />
+      <img id="a3" src="img/img (4).gif" />
+      <img id="a4" src="img/img (5).gif" />
+      <img id="a5" src="img/img (6).gif" />
+      <img id="a6" src="img/img (7).gif" />
+      <img id="a7" src="img/img (8).gif" />
+      <img id="a8" src="img/img (9).gif" />
+      <img id="a9" src="img/img (10).gif" />
+      <img id="a10" src="img/img (11).gif" />
+      <img id="a11" src="img/img (12).gif" />
+      <img id="a12" src="img/img (13).gif" />
+      <img id="a13" src="img/img (14).gif" />
+      <img id="a14" src="img/img (15).gif" />
+      <img id="a15" src="img/img (16).gif" />
+      <img id="a16" src="img/img (17).gif" />
+      <img id="a17" src="img/img (18).gif" />
+      <img id="a18" src="img/img (19).gif" />
+      <img id="a19" src="img/img (20).gif" />
+      <img id="a20" src="img/img (21).gif" />
+      <img id="a21" src="img/img (22).gif" />
+      <img id="a22" src="img/img (23).gif" />
+      <img id="a23" src="img/img (24).gif" />
+      <img id="a24" src="img/img (25).gif" />
+      <img id="a25" src="img/img (26).gif" />
+      <img id="a26" src="img/img (27).gif" />
+      <img id="a27" src="img/img (28).gif" />
+      <img id="a28" src="img/img (29).gif" />
+      <img id="a29" src="img/img (30).gif" />
+      <img id="a30" src="img/img (32).gif" />
+      <img id="a31" src="img/img (31).gif" />
+      <img id="a32" src="img/img (33).gif" />
+      <img id="a33" src="img/img (34).gif" />
+      <img id="a34" src="img/img (35).gif" />
+      <img id="a35" src="img/img (36).gif" />
+      <img id="a36" src="img/img (37).gif" />
+      <img id="a37" src="img/img (38).gif" />
+      <img id="a38" src="img/img (39).gif" />
+      <img id="a39" src="img/img (40).gif" />
+      <img id="a40" src="img/img (41).gif" />
+      <img id="a41" src="img/img (42).gif" />
+      <img id="a42" src="img/img (43).gif" />
+      <img id="a43" src="img/img (44).gif" />
+      <img id="a44" src="img/img (45).gif" />
+      <img id="a45" src="img/img (46).gif" />
+      <img id="a46" src="img/img (47).gif" />
+      <img id="a47" src="img/img (48).gif" />
+      <img id="a48" src="img/img (49).gif" />
+      <img id="a49" src="img/img (50).gif" />
+      <img id="a50" src="img/img (51).gif" />
+      <img id="a51" src="img/img (52).gif" />
+      <img id="a52" src="img/img (53).gif" />
+      <img id="a53" src="img/img (54).gif" />
+      <img id="a54" src="img/img (55).gif" />
+      <img id="a55" src="img/img (56).gif" />
+      <img id="a56" src="img/img (57).gif" />
+      <img id="a57" src="img/img (58).gif" />
+      <img id="a58" src="img/img (59).gif" />
+      <img id="a59" src="img/img (60).gif" />
+      <img id="a60" src="img/img (61).gif" />
+      <img id="a61" src="img/img (62).gif" />
+      <img id="a62" src="img/img (63).gif" />
+      <img id="a63" src="img/img (64).gif" />
+      <img id="a64" src="img/img (65).gif" />
+      <img id="a65" src="img/img (66).gif" />
+      <img id="a66" src="img/img (67).gif" />
+      <img id="a67" src="img/img (68).gif" />
+      <img id="a68" src="img/img (69).gif" />
+      <img id="a69" src="img/img (70).gif" />
+      <img id="a70" src="img/img (71).gif" />
+      <img id="a71" src="img/img (72).gif" />
+      <img id="a72" src="img/img (73).gif" />
+      <img id="a73" src="img/img (74).gif" />
+      <img id="a74" src="img/img (75).gif" />
+      <img id="a75" src="img/img (76).gif" />
+      <img id="a76" src="img/img (77).gif" />
+      <img id="a77" src="img/img (78).gif" />
+      <img id="a78" src="img/img (79).gif" />
+      <img id="a79" src="img/img (80).gif" />
+      <img id="a80" src="img/img (81).gif" />
+      <img id="a81" src="img/img (82).gif" />
+      <img id="a82" src="img/img (83).gif" />
+      <img id="a83" src="img/img (84).gif" />
+      <img id="a84" src="img/img (85).gif" />
+      <img id="a85" src="img/img (86).gif" />
+      <img id="a86" src="img/img (87).gif" />
+      <img id="a87" src="img/img (88).gif" />
+      <img id="a88" src="img/img (89).gif" />
+      <img id="a89" src="img/img (90).gif" />
+      <img id="a90" src="img/img (91).gif" />
+      <img id="a91" src="img/img (92).gif" />
+      <img id="a92" src="img/img (93).gif" />
+      <img id="a93" src="img/img (94).gif" />
+      <img id="a94" src="img/img (95).gif" />
+      <img id="a95" src="img/img (96).gif" />
+      <img id="a96" src="img/img (97).gif" />
+      <img id="a97" src="img/img (98).gif" />
+      <img id="a98" src="img/img (99).gif" />
+      <img id="a99" src="img/img (100).gif" />
+      <img id="a100" src="img/img (101).gif" />
+      <img id="a101" src="img/img (102).gif" />
+      <img id="a102" src="img/img (103).gif" />
+      <img id="a103" src="img/img (104).gif" />
+      <img id="a104" src="img/img (105).gif" />
+      <img id="a105" src="img/img (106).gif" />
+      <img id="a106" src="img/img (107).gif" />
+      <img id="a107" src="img/img (108).gif" />
+      <img id="a108" src="img/img (109).gif" />
+      <img id="a109" src="img/img (110).gif" />
+      <img id="a110" src="img/img (111).gif" />
+      <img id="a111" src="img/img (112).gif" />
+      <img id="a112" src="img/img (113).gif" />
+      <img id="a113" src="img/img (114).gif" />
+      <img id="a114" src="img/img (115).gif" />
+      <img id="a115" src="img/img (116).gif" />
+      <img id="a116" src="img/img (117).gif" />
+      <img id="a117" src="img/img (118).gif" />
+      <img id="a118" src="img/img (119).gif" />
+      <img id="a119" src="img/img (120).gif" />
+      <img id="a120" src="img/img (121).gif" />
+      <img id="a121" src="img/img (122).gif" />
+      <img id="a122" src="img/img (123).gif" />
+      <img id="a123" src="img/img (124).gif" />
+      <img id="a124" src="img/img (125).gif" />
+      <img id="a125" src="img/img (126).gif" />
+      <img id="a126" src="img/img (127).gif" />
+      <img id="a127" src="img/img (128).gif" />
+      <img id="a128" src="img/Ultimos_21.gif" />
+      <img id="a129" src="img/Ultimos_22.gif" />
+      <img id="a130" src="img/Ultimos_23.gif" />
+      <img id="a131" src="img/Ultimos_24.gif" />
+      <img id="a132" src="img/Ultimos_25.gif" />
+      <img id="a133" src="img/Ultimos_26.gif" />
+      <img id="a134" src="img/Ultimos_27.gif" />
+      <img id="a135" src="img/Ultimos_28.gif" />
+      <img id="a136" src="img/Ultimos_29.gif" />
+      <img id="a137" src="img/Ultimos_30.gif" />
+      <img id="a138" src="img/Ultimos_31.gif" />
+      <img id="a139" src="img/Ultimos_32.gif" />
+      <img id="a140" src="img/Ultimos_33.gif" />
+      <img id="a141" src="img/Ultimos_34.gif" />
+      <img id="a142" src="img/Ultimos_35.gif" />      
+    </div>
+    <div id="timestamp">28/07/2021 19:37:23</div>
+    <button id='zoomOutBtn'>Back</button>
+    
+    <script>
+      //AQUI COMEÇA O CÓDIGO DA PÁGINA
+      var cellsize;
+      var mobileMode = false;
+      var columns = 16;//altere aqui a quantidade de colunas na versão desktop
+
+      if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
+      || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0,4))) { 
+        columns = 4;//altere aqui quantidade de colunas na versão mobile
+      } 
+
+      cellsize = (window.innerWidth)/columns;
+
+      $("#myMosaic").css("width",window.innerWidth);
+      $("#myMosaic img").css("width",cellsize+"px");
+      $("#myMosaic img").css("height",(cellsize)+"px");//altere este número '0.6' para mudar a proporção de largura e altura (mude lá em baixo também)
+
+      $("#myMosaic").click(function(e) {zoomIn(e)});
+
+      function zoomIn(e) {
+        let i = e.target.id.slice(1);
+        let x = i % columns;
+        let y = Math.floor(i/columns);
+        
+        $("img").css("width",window.innerWidth+"px");
+        $("img").css("height",window.innerHeight+"px");
+        
+        $("#myMosaic").css("transform","translate("+(-x*window.innerWidth)+"px,"+(-y*window.innerHeight)+"px)")
+
+        $("#myMosaic").off('click');
+
+        $("#zoomOutBtn").css("display","inline")
+
+        ofst = Math.floor(Math.random()*12) - 6;
+        setInterval(function() {
+          $("#timestamp").html(callClock(ofst));
+        },1000);
+
+        setTimeout(function(){
+          $("#timestamp").css("display","block");
+        },500);
+      }
+
+      $("#zoomOutBtn").click(function() {
+        $("img").css("width",cellsize+"px");
+        $("img").css("height",(cellsize)+"px");//altere este número '0.6' para mudar a proporção de largura e altura (mude lá em cima também)
+        
+        $("#myMosaic").css("transform","translate(0px,0px)");
+
+        $("#myMosaic").click(function(e) {zoomIn(e)});
+
+        $("#zoomOutBtn").css("display","none");
+
+        $("#timestamp").css("display","none");
+      });
+
+      function callClock(ofst) {
+        dt = new Date();
+        dofst = new Date(ofst*3600000);
+        dt = new Date(dt.getTime() + dofst.getTime());
+        d = dt.getDate();
+        m = dt.getMonth()+1;
+        h = dt.getHours();
+        mi = dt.getMinutes();
+        s = dt.getSeconds();
+
+        ds = "";
+        if(d < 10) {
+          ds += "0"+d;
+        } else {
+          ds += d;
+        }
+        if(m < 10) {
+          ds += "/0"+m+"/"+dt.getFullYear()+" "
+        } else {
+          ds += "/"+m+"/"+dt.getFullYear()+" "
+        }
+        if(h > 12) {
+          ds += (h-12)+":"
+        } else {
+          ds += h+":"
+        }
+        if(mi < 10) {
+          ds += "0"+mi+":"
+        } else {
+          ds += mi+":"
+        }
+        if(s < 10) {
+          ds += "0"+s
+        } else {
+          ds += s
+        }
+
+        return ds
+      }
+    </script>
+  </body>
+</html>
